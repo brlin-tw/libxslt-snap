@@ -102,7 +102,7 @@ parts:
     - libxml2
 
     source: https://gitlab.gnome.org/GNOME/libxslt.git
-    source-tag: v1.1.32
+    source-tag: v1.1.33-rc2
     source-depth: 30
 
     plugin: autotools
