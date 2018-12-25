@@ -29,7 +29,7 @@ icon: snap/gui/libxslt.adapted.png
 version: determined-by-version-script
 version-script: ./snap/local/build-utilities/set-snap-version.bash
 
-confinement: devmode
+confinement: strict
 grade: devel
 
 plugs:
