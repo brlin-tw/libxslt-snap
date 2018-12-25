@@ -64,7 +64,7 @@ You may generate the unique hash by using the following command in terminal:
 ## The Snapcrafters
 | [![林博仁(Buo-ren, Lin)'s avatar](http://gravatar.com/avatar/66a5b84972e73e895d5d68d48b1e1e21/?s=128)](https://github.com/Lin-Buo-Ren) |
 | :-: |
-| [Your Name](https://github.com/Lin-Buo-Ren) |
+| [林博仁(Buo-ren, Lin)](https://github.com/Lin-Buo-Ren) |
 
 ## Upstream
 | [![Upstream](http://gravatar.com/avatar/bc0bced65e963eb5c3a16cab8b004431?s=128)](https://gitlab.gnome.org/GNOME/libxslt/issues) |
