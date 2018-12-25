@@ -23,17 +23,16 @@ Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.
     #sudo snap install --channel=beta libxslt
     #sudo snap install libxslt
     
-    # Connect the snap to essential security confinement interfaces #
-    ## (Proper reasoning for connecting _plug_name_) ##
-    sudo snap connect libxslt:_plug_name_
-    
     # Connect the snap to optional security confinement interfaces #
-    ## (Proper reasoning for connecting _plug_name_) ##
-    sudo snap connect libxslt:_plug_name_
+    ## For accessing files under `/media`, `/run/media` or `/mnt ##
+    sudo snap connect libxslt:removable-media
     
     # Launch the application #
-    libxslt
-    snap run libxslt # If you have another existing installation
+    libxslt.xsltproc
+
+    ## If you want to use the `xsltproc` alias
+    snap alias libxslt.xsltproc xsltproc
+    xsltproc
 
 ### The Graphical Way
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/libxslt)
