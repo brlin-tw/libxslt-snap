@@ -11,9 +11,7 @@
 [![Build Status Badge of the `libxslt` Snap](https://build.snapcraft.io/badge/Lin-Buo-Ren/libxslt-snap.svg "Build Status of the `libxslt` snap")](https://build.snapcraft.io/user/Lin-Buo-Ren/libxslt-snap)
 -->
 
-<!-- Uncomment and modify this when you have a screenshot
-![Screenshot of the Snapped Application](local/screenshots/screenshot.png "Screenshot of the Snapped Application")
--->
+![Screenshot of the Snapped Application](local/screenshots/version.png "Screenshot of the Snapped Application")
 
 Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.png" align="top" width="24" /> with 💝 by Snapcrafters
 
