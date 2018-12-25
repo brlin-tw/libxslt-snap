@@ -7,9 +7,7 @@
 
 **This is the unofficial snap for The XSLT C library for GNOME**, *"XSLT C library developed for the GNOME project"*. It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
 
-<!-- Uncomment and modify this when you are provided a build status badge
 [![Build Status Badge of the `libxslt` Snap](https://build.snapcraft.io/badge/Lin-Buo-Ren/libxslt-snap.svg "Build Status of the `libxslt` snap")](https://build.snapcraft.io/user/Lin-Buo-Ren/libxslt-snap)
--->
 
 ![Screenshot of the Snapped Application](local/screenshots/version.png "Screenshot of the Snapped Application")
 
