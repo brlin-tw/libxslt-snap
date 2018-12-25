@@ -20,6 +20,10 @@ description: |
 
   People can either embed the library in their application or use xsltproc the command line processing tool. This library is free software and can be reused in commercial applications.
 
+  This is NOT an official distribution of libxslt, for any issue regarding using this snap please refer to the issue tracker:
+
+      https://github.com/Lin-Buo-Ren/libxslt-snap/issues
+
 icon: snap/gui/libxslt.adapted.png
 
 version: determined-by-version-script
