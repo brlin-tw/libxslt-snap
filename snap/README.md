@@ -22,7 +22,7 @@ Published for <img src="http://anything.codes/slack-emoji-for-techies/emoji/tux.
     #sudo snap install libxslt
     
     # Connect the snap to optional security confinement interfaces #
-    ## For accessing files under `/media`, `/run/media` or `/mnt ##
+    ## For accessing files under `/media`, `/run/media` or `/mnt` ##
     sudo snap connect libxslt:removable-media
     
     # Launch the application #
