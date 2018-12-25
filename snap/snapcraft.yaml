@@ -102,8 +102,10 @@ parts:
     - libxml2
 
     source: https://gitlab.gnome.org/GNOME/libxslt.git
-    source-tag: v1.1.33-rc2
     source-depth: 30
+
+    # For building stable and release candidate releases
+    #source-tag: v1.1.33-rc2
 
     plugin: autotools
     build-packages:
