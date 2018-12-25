@@ -30,7 +30,7 @@ version: determined-by-version-script
 version-script: ./snap/local/build-utilities/set-snap-version.bash
 
 confinement: strict
-grade: devel
+grade: stable
 
 plugs:
   # Storage access
