@@ -5,7 +5,7 @@
 -->
 ![Icon of The XSLT C library for GNOME](gui/libxslt.adapted.png "Icon of The XSLT C library for GNOME")
 
-**This is the unofficial snap for The XSLT C library for GNOME**, *"XSLT C library developed for the GNOME project"*. It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
+**This is the unofficial snap for The XSLT C library for GNOME**, *"An XSLT C library developed for the GNOME project"*. It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
 
 [![Build Status Badge of the `libxslt` Snap](https://build.snapcraft.io/badge/Lin-Buo-Ren/libxslt-snap.svg "Build Status of the `libxslt` snap")](https://build.snapcraft.io/user/Lin-Buo-Ren/libxslt-snap)
 
