@@ -93,6 +93,7 @@ parts:
 
   # Remote part for libxml2
   libxml2:
+    source-tag: v2.9.9
     prime:
     # Drop libxml2 files except for runtime libraries
     - $library-shared
