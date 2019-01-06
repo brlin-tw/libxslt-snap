@@ -106,7 +106,7 @@ parts:
     source-depth: 30
 
     # For building stable and release candidate releases
-    #source-tag: v1.1.33-rc2
+    source-tag: v1.1.33
 
     plugin: autotools
     build-packages:
