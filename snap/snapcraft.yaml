@@ -26,6 +26,7 @@ description: |
       https://github.com/Lin-Buo-Ren/libxslt-snap/issues
 
 icon: snap/gui/libxslt.adapted.png
+license: MIT
 
 adopt-info: libxslt
 assumes:
