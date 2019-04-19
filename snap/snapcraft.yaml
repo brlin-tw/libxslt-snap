@@ -78,14 +78,14 @@ parts:
     build-packages:
     - git
     stage-snaps:
-    - selective-checkout/latest/edge
+    - selective-checkout
     prime:
     - -*
 
   libxml2:
     plugin: nil
     stage-snaps:
-    - libxml2/latest/edge
+    - libxml2
     stage:
     - bin/xml2-config
     - include/*
