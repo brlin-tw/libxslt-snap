@@ -14,6 +14,7 @@
 # For support refer to the snapcraft section in the Snapcraft Forum:
 # https://forum.snapcraft.io/c/snapcraft
 name: libxslt
+title: The XSLT C library for GNOME
 summary: XSLT C library developed for the GNOME project
 description: |
   Libxslt is the XSLT C library developed for the GNOME project. XSLT itself is a an XML language to define transformation for XML. Libxslt is based on libxml2 the XML C library developed for the GNOME project. It also implements most of the EXSLT set of processor-portable extensions functions and some of Saxon's evaluate and expressions extensions.
@@ -26,9 +27,10 @@ description: |
 
 icon: snap/gui/libxslt.adapted.png
 
-version: determined-by-version-script
-version-script: ./snap/local/build-utilities/set-snap-version.bash
-
+adopt-info: libxslt
+assumes:
+- command-chain
+base: core
 confinement: strict
 grade: stable
 
@@ -42,21 +44,13 @@ plugs:
 
 apps:
   xsltproc:
-    command: >
-      bin/locales-launch
-      "${SNAP}"/bin/libxslt-launch
-      "${SNAP}"/bin/xsltproc
+    adapter: full
+    command: bin/xsltproc
+    command-chain:
+    - bin/locales-launch
+    - bin/libxslt-launch
 
 parts:
-  # Utility programs to help with package building
-  build-utilities:
-    source: snap/local/build-utilities
-    plugin: dump
-    organize:
-      '*': assets/build-utilities/
-    prime:
-    - -*
-
   # Launcher programs to fix problems at runtime
   launchers:
     source: snap/local/launchers
@@ -66,47 +60,54 @@ parts:
     stage:
     - -bin/README.*
 
-  # Program patches to solve issues that can't be solved by tweaking in runtime
-  #patches:
-    #source: snap/local/patches
-    #plugin: dump
-    #organize:
-      #'*': assets/patches/
-    #prime:
-    #- -*
-
-  # Helper programs that can be called at snap runtime
-  #helpers:
-    #source: snap/local/helpers
-    #plugin: dump
-    #organize:
-      #'*': bin/
-    #stage:
-    #- -bin/README.*
-
-  # Remote part for fixing the glibc locales(and gnu gettext I18N support)
-  # This part is only required for non GUI apps that don't uses the desktop-launch launchers
+  # Stage snap for fixing the Glibc locales
+  # https://forum.snapcraft.io/t/the-locales-launch-stage-snap/10296
   locales-launch:
+    plugin: nil
+    stage-snaps:
+    - locales-launch
+    stage-packages:
+    - libc-bin
+    - locales
 
-  # Remote part for recording the exact revision for each part during building
-  parts-meta-info:
-
-  # Remote part for libxml2
-  libxml2:
-    source-tag: v2.9.9
+  # Check out the tagged release revision if it isn't promoted to the stable channel
+  # https://forum.snapcraft.io/t/selective-checkout-check-out-the-tagged-release-revision-if-it-isnt-promoted-to-the-stable-channel/10617
+  selective-checkout:
+    plugin: nil
+    build-packages:
+    - git
+    stage-snaps:
+    - selective-checkout/latest/edge
     prime:
-    # Drop libxml2 files except for runtime libraries
-    - $library-shared
+    - -*
+
+  libxml2:
+    plugin: nil
+    stage-snaps:
+    - libxml2/latest/edge
+    stage:
+    - bin/xml2-config
+    - include/*
+    - lib/*
+    prime:
+    - lib/*
 
   libxslt:
     after:
     - libxml2
+    - selective-checkout
 
     source: https://gitlab.gnome.org/GNOME/libxslt.git
     source-depth: 30
 
     # For building stable and release candidate releases
-    source-tag: v1.1.33
+    #source-tag: v1.1.33
+
+    override-pull: |
+      snapcraftctl pull
+
+      "$SNAPCRAFT_STAGE"/scriptlets/selective-checkout \
+        --append-packaging-revision
 
     plugin: autotools
     build-packages:
@@ -116,7 +117,3 @@ parts:
     #- libxml2-dev
 
     - pkg-config
-
-    # Not supported for now
-    #stage-snaps:
-    #- libxml2
