@@ -99,7 +99,7 @@ parts:
     - selective-checkout
 
     source: https://gitlab.gnome.org/GNOME/libxslt.git
-    source-depth: 30
+    source-depth: 100
 
     # For building stable and release candidate releases
     #source-tag: v1.1.33
