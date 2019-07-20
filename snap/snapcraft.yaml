@@ -118,3 +118,15 @@ parts:
     #- libxml2-dev
 
     - pkg-config
+
+    override-prime: |
+      set -o nounset
+      snapcraftctl prime
+      sed \
+        --in-place \
+        's#^prefix=.*$#prefix="$(dirname "$(realpath "${0}")")"/..#' \
+        bin/xslt-config
+      sed \
+        --in-place \
+        's#^prefix=.*$#prefix=#' \
+        lib/pkgconfig/lib*xslt.pc
