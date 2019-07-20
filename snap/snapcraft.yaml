@@ -108,8 +108,7 @@ parts:
       snapcraftctl pull
 
       "$SNAPCRAFT_STAGE"/scriptlets/selective-checkout \
-        --append-packaging-revision \
-        --force-stable
+        --append-packaging-revision
 
     plugin: autotools
     build-packages:
